@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "auth0.helloserverless.com", "auth0.helloserverless.com.csproj", "{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC93FA4F-E8E4-4D30-8DFF-BF6D03F31484}
+	EndGlobalSection
+EndGlobal

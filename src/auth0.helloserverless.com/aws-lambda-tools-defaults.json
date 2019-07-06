@@ -1,12 +1,13 @@
+
 {
-  "region": "us-east-1",
-  "configuration": "Release",
-  "framework": "netcoreapp2.1",
-  "function-name": "auth0-helloserverless-com",
-  "function-handler": "auth0.helloserverless.com::auth0.helloserverless.com.LambdaEntryPoint::FunctionHandlerAsync",
-  "function-memory-size": 128,
-  "function-timeout": 30,
-  "function-runtime": "dotnetcore2.1",
-  "tracing-mode": "PassThrough",
-  "environment-variables": "\"ASPNETCORE_ENVIRONMENT\"=\"Production\""
+    "region" : "us-east-1",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp2.1",
+    "function-name" : "auth0-helloserverless-com",
+    "function-handler" : "auth0.helloserverless.com::auth0.helloserverless.com.LambdaEntryPoint::FunctionHandlerAsync",
+    "function-memory-size" : 128,
+    "function-timeout"     : 15,
+    "function-runtime"     : "dotnetcore2.1",
+    "tracing-mode"         : "PassThrough",
+    "environment-variables" : "\"ASPNETCORE_ENVIRONMENT\"=\"Production\""
 }

@@ -123,10 +123,13 @@ namespace common.helloserverless.com.IoC
         {
             if (disposing)
             {
-                _configuration = null;
-                _serviceProvider = null;
-                _container?.Dispose();
-                _current = null;
+                lock (_currentLock)
+                {
+                    _configuration = null;
+                    _serviceProvider = null;
+                    _container?.Dispose();
+                    _current = null;
+                }
             }
         }
 

@@ -22,8 +22,8 @@ namespace auth0.helloserverless.com.test
 
             var req = new AddUserRequest()
             {
-                Username = "1@2.com",
-                Password = "12345"
+                username = "1@2.com",
+                password = "12345"
             };
 
             var userInfo = await handler.Handle(req, CancellationToken.None);

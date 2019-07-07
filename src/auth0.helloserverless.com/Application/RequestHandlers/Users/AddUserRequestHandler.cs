@@ -20,12 +20,15 @@ namespace auth0.helloserverless.com.Application.RequestHandlers.Users
             if (request == null)
                 return null;
 
-            var passwordHashInfo = _passwordHasher.Hash(request.Username);
+            if (string.IsNullOrEmpty(request.username))
+                request.username = request.email; // use email as the username
+
+            var passwordHashInfo = _passwordHasher.Hash(request.password);
 
             var userInfo = new UserInfo()
             {
-                user_id = request.Username,
-                username = request.Username,
+                user_id = request.username,
+                username = request.username,
                 PasswordInfo = passwordHashInfo
             };
 

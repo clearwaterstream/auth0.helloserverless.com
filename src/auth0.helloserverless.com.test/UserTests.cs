@@ -1,4 +1,5 @@
-﻿using auth0.helloserverless.com.domain.Model;
+﻿using auth0.helloserverless.com.domain.Features;
+using auth0.helloserverless.com.domain.Model;
 using auth0.helloserverless.com.domain.Requests;
 using clearwaterstream.IoC;
 using MediatR;
@@ -28,6 +29,18 @@ namespace auth0.helloserverless.com.test
             var userInfo = await handler.Handle(req, CancellationToken.None);
 
             Assert.NotNull(userInfo.user_id);
+        }
+
+        [Fact]
+        public async Task LookupUser()
+        {
+            var lookup = ServiceRegistrar.Current.GetInstance<IUserLookup>();
+
+            var userInfo = await lookup.GetByUsername("1@2.com", CancellationToken.None);
+
+            Assert.NotNull(userInfo);
+            Assert.NotNull(userInfo?.username);
+            Assert.NotNull(userInfo?.PasswordInfo);
         }
     }
 }

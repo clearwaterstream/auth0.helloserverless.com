@@ -1,4 +1,5 @@
-﻿using auth0.helloserverless.com.Application.RequestHandlers.Users;
+﻿using auth0.helloserverless.com.Application.Persistence;
+using auth0.helloserverless.com.Application.RequestHandlers.Users;
 using auth0.helloserverless.com.Application.Security;
 using auth0.helloserverless.com.domain.Features;
 using Autofac;
@@ -21,6 +22,8 @@ namespace auth0.helloserverless.com.Initialization
             {
                 builder.Register(x => new InMemSecretsContainer()).As<ISecretsContainer>().SingleInstance();
             }
+
+            builder.Register(x => new UserDb()).AsImplementedInterfaces().SingleInstance();
 
             builder.Register(x => new AddUserRequestHandler()).AsImplementedInterfaces().SingleInstance();
         }

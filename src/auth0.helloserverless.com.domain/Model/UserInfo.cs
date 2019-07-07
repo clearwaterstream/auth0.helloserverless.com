@@ -12,6 +12,7 @@ namespace auth0.helloserverless.com.domain.Model
         public string email { get; set; }
 
         public HashedPasswordInfo PasswordInfo { get; set; }
-        public bool ShouldSerializePasswordInfo() => false;
+
+        public DateTime LastUpdatedOn { get; set; }
     }
 }

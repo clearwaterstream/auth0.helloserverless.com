@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "auth0.helloserverless.com.d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.helloserverless.com", "..\common.helloserverless.com\common.helloserverless.com.csproj", "{7149794E-E806-4986-8E03-86D12A223D72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "auth0.helloserverless.com.test", "..\auth0.helloserverless.com.test\auth0.helloserverless.com.test.csproj", "{0CD38405-1300-478E-B8B0-11C6003C4789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7149794E-E806-4986-8E03-86D12A223D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7149794E-E806-4986-8E03-86D12A223D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7149794E-E806-4986-8E03-86D12A223D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD38405-1300-478E-B8B0-11C6003C4789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD38405-1300-478E-B8B0-11C6003C4789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD38405-1300-478E-B8B0-11C6003C4789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD38405-1300-478E-B8B0-11C6003C4789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

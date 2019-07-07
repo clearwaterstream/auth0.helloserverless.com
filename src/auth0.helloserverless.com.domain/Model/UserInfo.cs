@@ -8,6 +8,7 @@ namespace auth0.helloserverless.com.domain.Model
     {
         public string user_id { get; set; }
         public string nickname { get; set; }
+        public string username { get; set; }
         public string email { get; set; }
 
         public HashedPasswordInfo PasswordInfo { get; set; }

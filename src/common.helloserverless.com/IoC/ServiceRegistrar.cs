@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using Autofac.Features.Variance;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,8 +36,6 @@ namespace common.helloserverless.com.IoC
                     if (_current == null)
                     {
                         var builder = new ContainerBuilder();
-
-                        builder.RegisterSource(new ContravariantRegistrationSource());
 
                         performRegistrations?.Invoke(builder);
 
@@ -118,6 +116,8 @@ namespace common.helloserverless.com.IoC
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        public static ILogger<T> GetLogger<T>() => (ILogger<T>)_serviceProvider.GetService(typeof(ILogger<T>));
 
         protected virtual void Dispose(bool disposing)
         {

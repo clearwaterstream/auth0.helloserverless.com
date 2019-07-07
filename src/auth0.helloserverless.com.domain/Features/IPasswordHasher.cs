@@ -8,5 +8,6 @@ namespace auth0.helloserverless.com.domain.Features
     public interface IPasswordHasher
     {
         HashedPasswordInfo Hash(string plainText);
+        HashedPasswordInfo Hash(string plainText, byte[] key);
     }
 }

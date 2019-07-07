@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using auth0.helloserverless.com.Initialization;
+using common.helloserverless.com.Configuration;
+using common.helloserverless.com.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +25,10 @@ namespace auth0.helloserverless.com
 
         public Startup(IConfiguration configuration, IHostingEnvironment env, ILogger<Startup> logger)
         {
+            AppEnvironment.SetName(env.EnvironmentName);
+
+            AppInitializer.Initialize(configuration);
+
             Configuration = configuration;
             HostingEnvironment = env;
 
@@ -40,6 +47,8 @@ namespace auth0.helloserverless.com
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            ServiceRegistrar.SetServiceProvider(app.ApplicationServices);
+
             var appLifetime = app.ApplicationServices.GetRequiredService<IApplicationLifetime>();
 
             appLifetime.ApplicationStopping.Register(OnShuttingDown);

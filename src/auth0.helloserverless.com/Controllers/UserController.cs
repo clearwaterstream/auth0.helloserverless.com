@@ -29,7 +29,7 @@ namespace auth0.helloserverless.com.Controllers
             if (string.IsNullOrEmpty(loginInfo.username) || string.IsNullOrEmpty(loginInfo.password))
                 return StatusCode(401);
 
-
+            throw new NotImplementedException();
         }
     }
 }

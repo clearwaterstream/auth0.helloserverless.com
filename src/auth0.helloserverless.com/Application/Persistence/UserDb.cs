@@ -45,6 +45,8 @@ namespace auth0.helloserverless.com.Application.Persistence
 
         async Task IUserPersistor.Save(UserInfo userInfo, CancellationToken cancellationToken)
         {
+            // to-do: move salt to a separate storage. Should not be saved together with the hash value. No point.
+
             userInfo.LastUpdatedOn = DateTime.UtcNow;
 
             var json = JsonConvert.SerializeObject(userInfo, JsonUtil.LeanSerializerSettings);

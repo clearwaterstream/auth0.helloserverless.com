@@ -25,6 +25,10 @@ namespace auth0.helloserverless.com
 
         static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureLogging(logging =>
+            {
+                logging.AddAWSProvider();
+            })
+            .UseStartup<Startup>();
     }
 }

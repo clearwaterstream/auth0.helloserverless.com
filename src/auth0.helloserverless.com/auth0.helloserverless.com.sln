@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "auth0.helloserverless.com", "auth0.helloserverless.com.csproj", "{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "auth0.helloserverless.com", "auth0.helloserverless.com.csproj", "{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "auth0.helloserverless.com.domain", "..\auth0.helloserverless.com.domain\auth0.helloserverless.com.domain.csproj", "{E944F272-098C-4197-981B-00BE4629DA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.helloserverless.com", "..\common.helloserverless.com\common.helloserverless.com.csproj", "{7149794E-E806-4986-8E03-86D12A223D72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BDC0D8A-C00E-4B58-9DE2-D24C9C756F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E944F272-098C-4197-981B-00BE4629DA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E944F272-098C-4197-981B-00BE4629DA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E944F272-098C-4197-981B-00BE4629DA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E944F272-098C-4197-981B-00BE4629DA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7149794E-E806-4986-8E03-86D12A223D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7149794E-E806-4986-8E03-86D12A223D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7149794E-E806-4986-8E03-86D12A223D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7149794E-E806-4986-8E03-86D12A223D72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

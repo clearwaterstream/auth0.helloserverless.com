@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using NLog;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace auth0.helloserverless.com
 {
-    public static class GlobalErrorHandler
+    public class GlobalErrorHandler
     {
-        static readonly Logger logger = LogManager.GetCurrentClassLogger();
-
         public static async Task ExceptionHandlerDelegate(HttpContext context)
         {
+            var logger = (ILogger<GlobalErrorHandler>)context.RequestServices.GetService(typeof(ILogger<GlobalErrorHandler>));
+
             var exceptionHandler = context.Features.Get<IExceptionHandlerFeature>();
 
             var resp = context.Response;
 
             if (exceptionHandler == null)
             {
-                logger.Error("IExceptionHandlerFeature is not available");
+                logger.LogError("IExceptionHandlerFeature is not available");
 
                 await WriteErrorMessage(resp, null);
 
@@ -38,14 +38,14 @@ namespace auth0.helloserverless.com
 
             if (ex == null)
             {
-                logger.Error("unknown exception caught in the global handler");
+                logger.LogError("unknown exception caught in the global handler");
 
                 await WriteErrorMessage(resp, null);
 
                 return;
             }
 
-            logger.Error(ex, "caught in global error handler");
+            logger.LogError(ex, "caught in global error handler");
 
             await WriteErrorMessage(resp, null);
         }

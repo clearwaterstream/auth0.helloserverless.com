@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NLog;
+using Microsoft.Extensions.Logging;
 
 namespace auth0.helloserverless.com
 {
@@ -18,17 +18,16 @@ namespace auth0.helloserverless.com
         public IConfiguration Configuration { get; }
         public IHostingEnvironment HostingEnvironment { get; }
 
-        readonly Logger logger = null;
+        readonly ILogger<Startup> _logger;
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IHostingEnvironment env, ILogger<Startup> logger)
         {
             Configuration = configuration;
             HostingEnvironment = env;
 
-            var logFactory = LogManager.LoadConfiguration("NLog.config");
-            logger = logFactory.GetCurrentClassLogger();
+            _logger = logger;
 
-            logger.Info("app is booting");
+            _logger.LogInformation("app is booting");
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -58,9 +57,7 @@ namespace auth0.helloserverless.com
 
         void OnShuttingDown()
         {
-            logger.Info("app is shutting down");
-
-            LogManager.Flush(3000); // flush any remaining messages
+            _logger.LogInformation("app is shutting down");
         }
     }
 }

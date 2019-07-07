@@ -1,21 +1,35 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NLog;
+﻿using auth0.helloserverless.com.Util;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace auth0.helloserverless.com.Controllers
 {
     public class UserController : ControllerBase
     {
-        static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        readonly ILogger<UserController> _logger;
+
+        public UserController(ILogger<UserController> logger)
+        {
+            _logger = logger;
+        }
 
         public IActionResult GetInfo()
         {
-            logger.Info("get info called");
+            var headers = Request.Headers.AsSingleLine();
 
-            return StatusCode(401);
+            _logger.LogDebug($"headers passed: {headers}");
+
+            var loginInfo = Request.Headers.ParseBasicAuthInfo();
+
+            if (string.IsNullOrEmpty(loginInfo.username) || string.IsNullOrEmpty(loginInfo.password))
+                return StatusCode(401);
+
+
         }
     }
 }

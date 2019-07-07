@@ -7,6 +7,6 @@ namespace auth0.helloserverless.com.domain.Model
     public class HashedPasswordInfo
     {
         public string HashedValue { get; set; }
-        public byte[] Salt { get; set; }
+        public string Salt { get; set; }
     }
 }

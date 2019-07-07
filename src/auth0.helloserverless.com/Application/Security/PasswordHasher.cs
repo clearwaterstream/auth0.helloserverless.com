@@ -68,7 +68,7 @@ namespace auth0.helloserverless.com.Application.Security
 
                         return new HashedPasswordInfo()
                         {
-                            Salt = salt,
+                            Salt = WebEncoders.Base64UrlEncode(salt),
                             HashedValue = hashedPassword
                         };
                     }

@@ -1,9 +1,8 @@
 ﻿using auth0.helloserverless.com.domain.Features;
 using auth0.helloserverless.com.domain.Model;
-using common.helloserverless.com.Configuration;
-using common.helloserverless.com.IoC;
-using common.helloserverless.com.Security;
-using common.helloserverless.com.Util;
+using clearwaterstream.Configuration;
+using clearwaterstream.IoC;
+using clearwaterstream.Security;
 using Microsoft.AspNetCore.WebUtilities;
 using System;
 using System.Collections.Generic;

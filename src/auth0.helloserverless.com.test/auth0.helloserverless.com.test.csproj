@@ -27,7 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\auth0.helloserverless.com.domain\auth0.helloserverless.com.domain.csproj" />
     <ProjectReference Include="..\auth0.helloserverless.com\auth0.helloserverless.com.csproj" />
-    <ProjectReference Include="..\common.helloserverless.com\common.helloserverless.com.csproj" />
+    <ProjectReference Include="..\clearwaterstream\clearwaterstream.csproj" />
   </ItemGroup>
 
 </Project>

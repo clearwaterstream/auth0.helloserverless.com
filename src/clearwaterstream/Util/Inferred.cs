@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace common.helloserverless.com.Util
+namespace System
 {
     /// <summary>
     /// A string whose value is inferred from the time of declaration.

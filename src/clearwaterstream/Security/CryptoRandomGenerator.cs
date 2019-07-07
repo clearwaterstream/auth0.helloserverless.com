@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 
-namespace common.helloserverless.com.Util
+namespace clearwaterstream.Security
 {
     public class CryptoRandomGenerator : IDisposable
     {

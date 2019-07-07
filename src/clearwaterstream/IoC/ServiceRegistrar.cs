@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace common.helloserverless.com.IoC
+namespace clearwaterstream.IoC
 {
     /// <summary>
     /// IoC pattern implemintation based on CommonServiceLocator by Microsoft

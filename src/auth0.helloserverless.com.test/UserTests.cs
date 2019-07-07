@@ -1,6 +1,6 @@
 ﻿using auth0.helloserverless.com.domain.Model;
 using auth0.helloserverless.com.domain.Requests;
-using common.helloserverless.com.IoC;
+using clearwaterstream.IoC;
 using MediatR;
 using System;
 using System.Collections.Generic;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace common.helloserverless.com.Security
+namespace clearwaterstream.Security
 {
     public interface ISecretsContainer
     {

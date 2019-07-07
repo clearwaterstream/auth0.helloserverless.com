@@ -1,9 +1,8 @@
-﻿using common.helloserverless.com.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace common.helloserverless.com.Configuration
+namespace clearwaterstream.Configuration
 {
     public static class AppEnvironment
     {

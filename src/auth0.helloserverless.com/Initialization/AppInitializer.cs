@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using common.helloserverless.com.IoC;
+using clearwaterstream.IoC;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using System;

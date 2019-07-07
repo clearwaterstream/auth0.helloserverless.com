@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace common.helloserverless.com.Util
+namespace System
 {
-    public static class FrameworkExtensions
+    public static class SystemExtensions
     {
         public static bool IsEither(this string str, params string[] values)
         {
@@ -189,7 +187,13 @@ namespace common.helloserverless.com.Util
 
             return result;
         }
+    }
+}
 
+namespace System.Collections.Specialized
+{
+    public static class NameValueCollectionExtensions
+    {
         public static string Environment(this NameValueCollection appSettings)
         {
             var env = appSettings["environment"];

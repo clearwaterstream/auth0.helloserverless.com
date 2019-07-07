@@ -1,5 +1,4 @@
 using auth0.helloserverless.com.Application.Security;
-using common.helloserverless.com.Util;
 using Microsoft.AspNetCore.WebUtilities;
 using System;
 using Xunit;

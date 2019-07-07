@@ -1,9 +1,8 @@
-﻿using common.helloserverless.com.Security;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using common.helloserverless.com.Util;
+using clearwaterstream.Security;
 
 namespace auth0.helloserverless.com.Application.Security
 {

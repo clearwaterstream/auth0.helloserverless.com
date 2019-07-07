@@ -2,8 +2,8 @@
 using auth0.helloserverless.com.Application.Security;
 using auth0.helloserverless.com.domain.Features;
 using Autofac;
-using common.helloserverless.com.Configuration;
-using common.helloserverless.com.Security;
+using clearwaterstream.Configuration;
+using clearwaterstream.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;

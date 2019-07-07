@@ -1,12 +1,12 @@
 ﻿using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
-using common.helloserverless.com.Configuration;
-using common.helloserverless.com.IoC;
+using clearwaterstream.Configuration;
+using clearwaterstream.IoC;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace common.helloserverless.com.AWS
+namespace clearwaterstream.AWS
 {
     public static class CredentialsHelper
     {

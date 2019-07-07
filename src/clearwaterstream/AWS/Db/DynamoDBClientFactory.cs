@@ -1,10 +1,10 @@
 ﻿using Amazon.DynamoDBv2;
-using common.helloserverless.com.Configuration;
+using clearwaterstream.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace common.helloserverless.com.AWS.Db
+namespace clearwaterstream.AWS.Db
 {
     public static class DynamoDBClientFactory
     {

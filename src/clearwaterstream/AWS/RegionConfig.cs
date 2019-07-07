@@ -1,11 +1,11 @@
 ﻿using Amazon;
-using common.helloserverless.com.IoC;
+using clearwaterstream.IoC;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace common.helloserverless.com.AWS
+namespace clearwaterstream.AWS
 {
     public class RegionConfig
     {

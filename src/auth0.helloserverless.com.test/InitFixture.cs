@@ -12,7 +12,7 @@ using Xunit;
 
 namespace auth0.helloserverless.com.test
 {
-    public class InitFixture : IDisposable
+    public class InitFixture
     {
         readonly IWebHost Host;
 
@@ -23,13 +23,6 @@ namespace auth0.helloserverless.com.test
             var builder =  WebHost.CreateDefaultBuilder().UseStartup<Startup>();
 
             Host = builder.Build();
-        }
-
-        public void Dispose()
-        {
-            ServiceRegistrar.Current?.Dispose();
-
-            Host?.Dispose();
         }
     }
 

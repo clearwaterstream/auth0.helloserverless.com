@@ -1,5 +1,6 @@
 ﻿using auth0.helloserverless.com.Application.RequestHandlers.Users;
 using auth0.helloserverless.com.Application.Security;
+using auth0.helloserverless.com.domain.Features;
 using Autofac;
 using common.helloserverless.com.Configuration;
 using common.helloserverless.com.Security;
@@ -14,7 +15,9 @@ namespace auth0.helloserverless.com.Initialization
     {
         protected override void Load(ContainerBuilder builder)
         {
-            if(AppEnvironment.IsDevelopment())
+            builder.Register(x => new PasswordHasher()).As<IPasswordHasher>().SingleInstance();
+
+            if (AppEnvironment.IsDevelopment())
             {
                 builder.Register(x => new InMemSecretsContainer()).As<ISecretsContainer>().SingleInstance();
             }

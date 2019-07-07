@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AWSProjectType>Lambda</AWSProjectType>
+    <UserSecretsId>c4b8c038-2e3f-4e51-9ce0-1cf526479b10</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

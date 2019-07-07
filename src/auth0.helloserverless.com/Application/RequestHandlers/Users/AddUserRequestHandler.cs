@@ -27,30 +27,42 @@ namespace auth0.helloserverless.com.Application.RequestHandlers.Users
             return client;
         });
 
-        AmazonDynamoDBClient dBClient => dbClientFactory.Value;
-
         static Table usersTable;
+
+        AmazonDynamoDBClient dbClient;
 
         public async Task<UserInfo> Handle(AddUserRequest request, CancellationToken cancellationToken)
         {
             if (request == null)
                 return null;
 
+            dbClient = dbClientFactory.Value;
+
             var passwordHashInfo = _passwordHasher.Hash(request.Username);
 
             var record = new Document(new Dictionary<string, DynamoDBEntry>()
             {
                 ["username"] = request.Username,
-                ["password_salt"] = passwordHashInfo.Salt,
-                ["password_hash"] = passwordHashInfo.HashedValue
+                ["password_salt"] = passwordHashInfo.Salt, // salt should ideally be stored in a separate storage location (i.e. not in the same db or table). For now, keep them in same place...
+                ["password_hash"] = passwordHashInfo.HashedValue,
+                ["last_updated_on"] = DateTime.UtcNow
             });
 
-            throw new NotImplementedException();
+            await usersTable.PutItemAsync(record, cancellationToken);
+
+            var userInfo = new UserInfo()
+            {
+                user_id = request.Username,
+                username = request.Username,
+                PasswordInfo = passwordHashInfo
+            };
+
+            return userInfo;
         }
 
         public void Dispose()
         {
-            dBClient?.Dispose();
+            dbClient?.Dispose();
         }
     }
 }

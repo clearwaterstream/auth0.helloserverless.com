@@ -1,6 +1,6 @@
 ﻿using Amazon;
 using common.helloserverless.com.IoC;
-using Microsoft.Extensions.Logging;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,11 +11,20 @@ namespace common.helloserverless.com.AWS
     {
         static readonly RegionEndpoint _currentRegion = null;
 
-        static readonly ILogger<RegionConfig> logger = ServiceRegistrar.GetLogger<RegionConfig>();
+        static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         static RegionConfig()
         {
-            var ec2Region = Amazon.Util.EC2InstanceMetadata.Region;
+            RegionEndpoint ec2Region = null;
+
+            try
+            {
+                ec2Region = Amazon.Util.EC2InstanceMetadata.Region;
+            }
+            catch(Exception ex)
+            {
+
+            }
 
             // will be null for non-ec2 code
             if (ec2Region != null)
@@ -30,7 +39,7 @@ namespace common.helloserverless.com.AWS
             if (string.IsNullOrEmpty(regionName))
                 regionName = "us-east-1";
 
-            logger.LogInformation($"using {regionName} region");
+            logger.Info($"using {regionName} region");
 
             _currentRegion = RegionEndpoint.GetBySystemName(regionName);
         }

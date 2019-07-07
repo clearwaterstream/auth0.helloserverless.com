@@ -33,7 +33,11 @@ namespace common.helloserverless.com.AWS
             var osUsername = ServiceRegistrar.Configuration["my_os_username"];
 
             if (string.IsNullOrEmpty(osUsername))
+            {
+                // https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2&tabs=windows
+                // from csproj dir, run dotnet user-secrets set "my_os_username" "username_value"
                 throw new Exception("please set my_os_username in secrets.json");
+            }
 
             // this is a workaround for IIS running under Windows
 

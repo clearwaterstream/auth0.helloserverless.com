@@ -13,6 +13,7 @@
 *.userprefs
 
 aws-lambda-tools-defaults.json
+aws-logger-errors.txt
 
 # Build results
 [Dd]ebug/
